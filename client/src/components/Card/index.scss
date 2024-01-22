@@ -1,0 +1,43 @@
+.card-popular{
+    text-align: center;
+    margin-bottom: 30px;
+ .info{
+    margin: 50px 0;
+    a{
+font-size: 22px;
+    }
+    p{
+font-size: 14px;
+color: var(--second--color);
+
+span{
+font-size: 18px;
+margin-right: 20px;
+}
+    }
+ }  
+ .author{
+    background-color:#EAEBEC;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .img-aut{
+        width: 40px;
+        border-radius: 50%;
+        img{
+            border-radius: 50%;   
+        }
+    }
+    p{
+span{
+color: var(--second--color);
+}
+    }
+    h6{
+background-color: var(--main--color);
+color: white;
+padding: 10px;
+    }
+ } 
+}

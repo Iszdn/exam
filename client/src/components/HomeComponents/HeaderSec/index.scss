@@ -1,0 +1,35 @@
+#header{
+    color: white;
+    background-image: url("https://preview.colorlib.com/theme/course/images/slider_background.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    .content{
+        text-align: center;
+        h2{
+            font-size: 72px;
+            span{
+background-color: var(--main--color);
+            }
+        }
+    }
+}
+@media screen and (max-width:992px) {
+    #header{
+        color: white;
+       
+        height: 70vh;
+        .content{
+            text-align: center;
+            h2{
+                font-size: 52px;
+                span{
+    background-color: var(--main--color);
+                }
+            }
+        }
+    } 
+}
