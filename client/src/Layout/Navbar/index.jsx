@@ -60,6 +60,9 @@ const Navbar = () => {
   
   <div className="container">
      <div className={`nav-media ${open ? "active-nav" : ""}`}>
+ <div onClick={()=>handleOpen()} className="bar-x">
+ <i class="fa-solid fa-xmark"></i>
+ </div>
  <div className="navigationss">
     <ul>
       <li>

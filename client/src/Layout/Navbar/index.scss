@@ -80,15 +80,28 @@ a{
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     display: none;
-  height: 0;
+//   height: 0;
+transform: translateX(0px);
   overflow: hidden;  
   transition: .7s;
   position: absolute;
-  width: 100%;
+  width: 300px;
+  height: 100vh;
+  padding: 40px;
 color: black;
-  top: 100px;
-  left: 0;
+  top: 0;
+  right: 0;
   background-color: white;
+  .bar-x{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+    padding: 10px 30px;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
   .navigationss{
     ul{
         display: flex;
@@ -112,7 +125,8 @@ color: black;
             }
 }
 .active-nav{
-    height: 400px;
+    transform: translateX(400px);
+
     
 }
 @media screen and (max-width:1242px){
