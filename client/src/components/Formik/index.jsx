@@ -3,10 +3,13 @@ import "./index.scss"
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios"
+import toast from 'react-hot-toast';
 const FormAdd = ({getData}) => {
 
   async function addProd(values) {
     const res=await axios.post("http://localhost:3000/",values)
+    toast.success('Successfully added!');
+
     getData()
   }
 

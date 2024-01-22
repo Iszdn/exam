@@ -58,7 +58,8 @@ const Navbar = () => {
   </div>
   {
   
- <div className={`nav-media ${open ? "active-nav" : ""}`}>
+  <div className="container">
+     <div className={`nav-media ${open ? "active-nav" : ""}`}>
  <div className="navigationss">
     <ul>
       <li>
@@ -86,6 +87,8 @@ const Navbar = () => {
     </ul>
   </div>
 </div> 
+  </div>
+
 }
 </div>
 

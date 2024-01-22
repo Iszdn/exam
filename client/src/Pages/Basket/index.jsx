@@ -15,7 +15,7 @@ const Wish = () => {
       </Helmet>
       <div className='wish'>
         {
-basket.length===0 ? <h2>basket is empty</h2> : 
+basket.length===0 ? <h2>basket is empty :/</h2> : 
 
 <div className='wishlist'>
 <div className="container">

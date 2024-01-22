@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import FormAdd from '../../components/Formik'
 import axios from 'axios'
 import "./index.scss"
+import toast from 'react-hot-toast'
 const AddPage = () => {
   const [data, setData] = useState([])
   const [search, setSearch] = useState('')
@@ -17,8 +18,18 @@ const AddPage = () => {
   }, [])
   async function deletedata(id) {
     const res = await axios.delete(`http://localhost:3000/${id}`)
+    toast.success('Successfully deleted!');
+
     getData()
   }
+ function typeOfItem(item) {
+ if (typeof item === "string") {
+  return item.toLowerCase()
+ }
+ else{
+  return item;
+ }
+ }
   return (
     <>
       <Helmet>
@@ -29,7 +40,7 @@ const AddPage = () => {
         <FormAdd getData={getData} />
         <div className="filter">
 
-          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
+          <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} />
 
           <div onClick={() => setProperty({ name: "title", asc: true })} className="btn">a-z</div>
           <div onClick={() => setProperty({ name: "title", asc: false })} className="btn">z-a</div>
@@ -57,10 +68,10 @@ const AddPage = () => {
                     .filter(x => x.title.toLowerCase().includes(search.toLowerCase()))
                     .sort((a, b) => {
                       if (property && property.asc === true) {
-                        return  a[property.name] > b[property.name] ? 1 : b[property.name] > a[property.name] ? -1 : 0
+                        return  typeOfItem(a[property.name]) > typeOfItem(b[property.name]) ? 1 : typeOfItem(b[property.name]) > typeOfItem(a[property.name]) ? -1 : 0
                       }
                       else if (property && property.asc === false) {
-                        return  a[property.name] < b[property.name] ? 1 : b[property.name] < a[property.name] ? -1 : 0
+                        return  typeOfItem(a[property.name]) < typeOfItem(b[property.name]) ? 1 : typeOfItem(b[property.name]) < typeOfItem(a[property.name]) ? -1 : 0
                       }
                       else {
                         return 0;

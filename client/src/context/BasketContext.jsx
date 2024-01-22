@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import toast from "react-hot-toast";
 
 export const BasketContext=createContext()
 
@@ -13,9 +14,11 @@ const subtotal=basket.reduce((initial,product)=>initial+parseInt(product.total),
      basket[existbasket].count++
      basket[existbasket].total=basket[existbasket].count*basket[existbasket].price
      setbasket([...basket])
+     toast.success('Successfully increased');
     }
     else{
       setbasket([...basket,{...product,count:1}])  
+      toast.success('Successfully added!');
     } 
   }
   function incbasket(product) {
@@ -32,6 +35,7 @@ const subtotal=basket.reduce((initial,product)=>initial+parseInt(product.total),
     if (existbasket!==-1) {
         if ( basket[existbasket].count===1) {
             return deletebasket(product)
+            
         }
      basket[existbasket].count--
      basket[existbasket].total=basket[existbasket].count*basket[existbasket].price
@@ -43,6 +47,7 @@ const subtotal=basket.reduce((initial,product)=>initial+parseInt(product.total),
     const deletedbasket=basket.filter(x=>x._id!==product._id)
   
       setbasket(deletedbasket)
+      toast.success('Successfully deleted!');
    
   }
   const data={
